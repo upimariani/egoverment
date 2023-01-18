@@ -17,10 +17,10 @@ class cDomisili extends CI_Controller
         $data = array(
             'domisili' => $this->mPengajuan->pengajuan_domisili()
         );
-        $this->load->view('Admin/Layout/head');
-        $this->load->view('Admin/Layout/aside');
+        $this->load->view('Pemerintahan/Layout/head');
+        $this->load->view('Pemerintahan/Layout/aside');
         $this->load->view('Admin/Domisili/vDomisili', $data);
-        $this->load->view('Admin/Layout/footer');
+        $this->load->view('Pemerintahan/Layout/footer');
     }
     public function cetak($id_domisili)
     {

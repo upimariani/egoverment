@@ -55,6 +55,7 @@
                                         <th>Alamat Admin</th>
                                         <th>No Hp Admin</th>
                                         <th class="text-center">Akun Admin</th>
+                                        <th class="text-center">Level Admin</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -69,6 +70,15 @@
                                             <td><?= $value->alamat_admin ?></td>
                                             <td><?= $value->no_hp ?></td>
                                             <td class="text-center"><span class="badge badge-warning"><?= $value->username ?></span> | <span class="badge badge-success"><?= $value->password ?></span></td>
+                                            <td><?php if ($value->level_admin == '1') {
+                                                    echo 'Admin';
+                                                } else if ($value->level_admin == '2') {
+                                                    echo 'Kasi Pemerintahan';
+                                                } else if ($value->level_admin == '3') {
+                                                    echo 'Kasi Kesejahteraan';
+                                                } else if ($value->level_admin == '4') {
+                                                    echo 'Kasi Pelayanan';
+                                                } ?></td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                     <button type="button" data-toggle="modal" data-target="#edit<?= $value->id_admin ?>" class="btn btn-warning">Edit</button>
@@ -87,6 +97,7 @@
                                         <th>Alamat Admin</th>
                                         <th>No Hp Admin</th>
                                         <th class="text-center">Akun Admin</th>
+                                        <th class="text-center">Level Admin</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </tfoot>
@@ -136,6 +147,15 @@
                         <label>Password Admin</label>
                         <input type="text" name="password" class="form-control" placeholder="Enter ..." required>
                     </div>
+                    <div class="form-group">
+                        <label>Level Admin</label>
+                        <select class="form-control" name="level" required>
+                            <option value="1">Admin</option>
+                            <option value="2">Kasi Pemerintahan</option>
+                            <option value="3">Kasi Kesejahteraan</option>
+                            <option value="4">Kasi Pelayanan</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -183,6 +203,23 @@ foreach ($admin as $key => $value) {
                         <div class="form-group">
                             <label>Password Admin</label>
                             <input type="text" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Enter ..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Level Admin</label>
+                            <select class="form-control" name="level" required>
+                                <option value="1" <?php if ($value->level_admin == '1') {
+                                                        echo 'selected';
+                                                    } ?>>Admin</option>
+                                <option value="2" <?php if ($value->level_admin == '2') {
+                                                        echo 'selected';
+                                                    } ?>>Kasi Pemerintahan</option>
+                                <option value="3" <?php if ($value->level_admin == '3') {
+                                                        echo 'selected';
+                                                    } ?>>Kasi Kesejahteraan</option>
+                                <option value="4" <?php if ($value->level_admin == '4') {
+                                                        echo 'selected';
+                                                    } ?>>Kasi Pelayanan</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">

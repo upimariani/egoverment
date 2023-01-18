@@ -14,10 +14,10 @@ class cSku extends CI_Controller
         $data = array(
             'sku' => $this->mPengajuan->sku()
         );
-        $this->load->view('Admin/Layout/head');
-        $this->load->view('Admin/Layout/aside');
+        $this->load->view('Kesejahteraan/Layout/head');
+        $this->load->view('Kesejahteraan/Layout/aside');
         $this->load->view('Admin/SKU/vSku', $data);
-        $this->load->view('Admin/Layout/footer');
+        $this->load->view('Kesejahteraan/Layout/footer');
     }
     public function cetak($id_sku)
     {

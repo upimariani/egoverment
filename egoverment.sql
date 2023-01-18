@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Des 2022 pada 22.57
+-- Waktu pembuatan: 10 Jan 2023 pada 13.58
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -33,15 +33,19 @@ CREATE TABLE `admin` (
   `alamat_admin` text NOT NULL,
   `no_hp` varchar(15) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `level_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `alamat_admin`, `no_hp`, `username`, `password`) VALUES
-(1, 'Admin', 'Kuningan, Jawa Barat', '085156727368', 'admin', 'admin');
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `alamat_admin`, `no_hp`, `username`, `password`, `level_admin`) VALUES
+(1, 'Admin', 'Kuningan, Jawa Barat', '085156727368', 'admin', 'admin', 1),
+(3, 'Kasi Pemerintahan', 'Kuningan', '085156727388', 'kasi_pemerintahan', 'kasi_pemerintahan', 2),
+(4, 'Kasi Kesejahteraan', 'Kuningan', '08976543434', 'kasi_kesejahteraan', 'kasi_kesejahteraan', 3),
+(5, 'Kasi Pelayanan', 'Kuningan', '089876778987', 'kasi_pelayanan', 'kasi_pelayanan', 4);
 
 -- --------------------------------------------------------
 
@@ -365,7 +369,7 @@ ALTER TABLE `sku`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `belum_kawin`

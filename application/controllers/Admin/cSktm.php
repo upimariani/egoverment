@@ -14,10 +14,10 @@ class cSktm extends CI_Controller
         $data = array(
             'sktm' => $this->mPengajuan->sktm()
         );
-        $this->load->view('Admin/Layout/head');
-        $this->load->view('Admin/Layout/aside');
+        $this->load->view('Kesejahteraan/Layout/head');
+        $this->load->view('Kesejahteraan/Layout/aside');
         $this->load->view('Admin/SKTM/vSktm', $data);
-        $this->load->view('Admin/Layout/footer');
+        $this->load->view('Kesejahteraan/Layout/footer');
     }
     public function cetak($id_sktm)
     {

@@ -22,7 +22,15 @@ class cLogin extends CI_Controller
             $password = $this->input->post('password');
             $cek = $this->mLogin->login($username, $password);
             if ($cek) {
-                redirect('Admin/cAdmin');
+                if ($cek->level_admin == '1') {
+                    redirect('Admin/cAdmin');
+                } else if ($cek->level_admin == '2') {
+                    redirect('Admin/cDomisili');
+                } else if ($cek->level_admin == '3') {
+                    redirect('Admin/cSktm');
+                } else if ($cek->level_admin == '4') {
+                    redirect('Admin/cKetLahir');
+                }
             } else {
                 $this->session->set_flashdata('error', 'Username dan Password Anda Salah!!!');
                 redirect('Admin/cLogin');

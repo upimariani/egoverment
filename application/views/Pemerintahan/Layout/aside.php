@@ -14,7 +14,7 @@
 				<img src="<?= base_url('asset/AdminLTE/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 			</div>
 			<div class="info">
-				<a href="#" class="d-block">Admin</a>
+				<a href="#" class="d-block">Kasi Pemerintahan</a>
 			</div>
 		</div>
 
@@ -33,29 +33,8 @@
 						</p>
 					</a> -->
 				</li>
-				<li class="nav-header">Kelola Data Master </li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cAdmin') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cAdmin') {
-																					echo 'active';
-																				}  ?>">
-						<i class="nav-icon far fa-user-circle"></i>
-						<p>
-							Admin
-						</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cMasyarakat') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cMasyarakat') {
-																						echo 'active';
-																					}  ?>">
-						<i class="nav-icon fas fa-th"></i>
-						<p>
-							Masyarakat
-						</p>
-					</a>
-				</li>
 
-				<!-- <li class="nav-header">Pengajuan Surat </li>
+				<li class="nav-header">Pengajuan Surat </li>
 				<li class="nav-item">
 					<a href="<?= base_url('Admin/cDomisili') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cDomisili') {
 																						echo 'active';
@@ -64,14 +43,7 @@
 						<p class="text">Surat Domisili</p>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cKetLahir') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cKetLahir') {
-																						echo 'active';
-																					}  ?>">
-						<i class="nav-icon far fa-circle text-warning"></i>
-						<p>Surat Keterangan Kelahiran</p>
-					</a>
-				</li>
+
 				<li class="nav-item">
 					<a href="<?= base_url('Admin/cPindah') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cPindah') {
 																					echo 'active';
@@ -80,30 +52,8 @@
 						<p>Surat Pindah</p>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cSktm') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cSktm') {
-																					echo 'active';
-																				}  ?>">
-						<i class="nav-icon far fa-circle text-primary"></i>
-						<p>Surat SKTM</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cSku') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cSku') {
-																				echo 'active';
-																			}  ?>">
-						<i class="nav-icon far fa-circle text-default"></i>
-						<p>Surat SKU</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cKematian') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cKematian') {
-																						echo 'active';
-																					}  ?>">
-						<i class="nav-icon far fa-circle text-primary"></i>
-						<p>Surat Kematian</p>
-					</a>
-				</li>
+
+
 				<li class="nav-item">
 					<a href="<?= base_url('Admin/cBmr') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cBmr') {
 																				echo 'active';
@@ -112,14 +62,7 @@
 						<p>Surat Status Rumah</p>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="<?= base_url('Admin/cBMenikah') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cBMenikah') {
-																						echo 'active';
-																					}  ?>">
-						<i class="nav-icon far fa-circle text-warning"></i>
-						<p>Surat Belum Menikah</p>
-					</a>
-				</li> -->
+
 				<!-- <li class="nav-header">LAPORAN</li>
 				<li class="nav-item">
 					<a href="<?= base_url('Admin/cLaporan') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cLaporan') {

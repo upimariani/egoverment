@@ -14,10 +14,10 @@ class cPindah extends CI_Controller
         $data = array(
             'pindah' => $this->mPengajuan->pindah()
         );
-        $this->load->view('Admin/Layout/head');
-        $this->load->view('Admin/Layout/aside');
+        $this->load->view('Pemerintahan/Layout/head');
+        $this->load->view('Pemerintahan/Layout/aside');
         $this->load->view('Admin/Pindah/vPindah', $data);
-        $this->load->view('Admin/Layout/footer');
+        $this->load->view('Pemerintahan/Layout/footer');
     }
     public function cetak($id_pindah)
     {

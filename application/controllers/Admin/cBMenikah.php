@@ -14,10 +14,10 @@ class cBMenikah extends CI_Controller
         $data = array(
             'belum_kawin' => $this->mPengajuan->belum_kawin()
         );
-        $this->load->view('Admin/Layout/head');
-        $this->load->view('Admin/Layout/aside');
+        $this->load->view('Pelayanan/Layout/head');
+        $this->load->view('Pelayanan/Layout/aside');
         $this->load->view('Admin/BMenikah/vBMenikah', $data);
-        $this->load->view('Admin/Layout/footer');
+        $this->load->view('Pelayanan/Layout/footer');
     }
     public function cetak($id_kawin)
     {
