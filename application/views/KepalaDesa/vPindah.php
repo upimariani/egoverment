@@ -61,49 +61,47 @@
                                     <?php
                                     $no = 1;
                                     foreach ($pindah as $key => $value) {
+                                        if ($value->stat_pindah == '0') {
                                     ?>
-                                        <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $value->no_kk ?></td>
-                                            <td><?= $value->nama_lengkap ?></td>
-                                            <td><?= $value->tgl_pengajuan_pindah ?></td>
-                                            <td><?= $value->alamat_tujuan ?> RT. <?= $value->rt ?> / RW. <?= $value->rw ?>
-                                                Desa/Kelurahan. <?= $value->desa_kel ?>
-                                                Kecamatan. <?= $value->kec ?>
-                                                Kab. <?= $value->kab ?> Kode Pos. <?= $value->kode_pos ?>
-                                                Provinsi. <?= $value->prov ?></td>
-                                            <td><?php
-                                                if ($value->type_pindah == '1') {
-                                                    echo 'Desa';
-                                                } else if ($value->type_pindah == '2') {
-                                                    echo 'Kecamatan';
-                                                } else {
-                                                    echo 'Provinsi';
-                                                }
-                                                ?></td>
-                                            <td><?php if ($value->stat_pindah == '0') {
-                                                ?>
-                                                    <span class="badge badge-warning">Menunggu Konfirmasi</span>
-                                                <?php
-                                                } else if ($value->stat_pindah == '1') {
-                                                ?>
-                                                    <span class="badge badge-info">Menunggu Dicetak</span>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <span class="badge badge-success">Selesai</span>
-                                                <?php
-                                                }
-                                                ?>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $value->no_kk ?></td>
+                                                <td><?= $value->nama_lengkap ?></td>
+                                                <td><?= $value->tgl_pengajuan_pindah ?></td>
+                                                <td><?= $value->alamat_tujuan ?> RT. <?= $value->rt ?> / RW. <?= $value->rw ?>
+                                                    Desa/Kelurahan. <?= $value->desa_kel ?>
+                                                    Kecamatan. <?= $value->kec ?>
+                                                    Kab. <?= $value->kab ?> Kode Pos. <?= $value->kode_pos ?>
+                                                    Provinsi. <?= $value->prov ?></td>
+                                                <td><?php
+                                                    if ($value->type_pindah == '1') {
+                                                        echo 'Desa';
+                                                    } else if ($value->type_pindah == '2') {
+                                                        echo 'Kecamatan';
+                                                    } else {
+                                                        echo 'Provinsi';
+                                                    }
+                                                    ?></td>
+                                                <td><?php if ($value->stat_pindah == '0') {
+                                                    ?>
+                                                        <span class="badge badge-warning">Menunggu Konfirmasi</span>
+                                                    <?php
+                                                    } else if ($value->stat_pindah == '1') {
+                                                    ?>
+                                                        <span class="badge badge-info">Selesai</span>
+                                                    <?php
+                                                    }
+                                                    ?>
 
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a href="<?= base_url('Admin/cPindah/cetak/' . $value->id_pindah) ?>" class="btn btn-warning">Cetak Surat</a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <a href="<?= base_url('KepalaDesa/cKonfirmasi/konfrm_pindah/' . $value->id_pindah) ?>" class="btn btn-warning">Konfirmasi</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                     <?php
+                                        }
                                     }
                                     ?>
                                 </tbody>

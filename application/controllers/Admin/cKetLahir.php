@@ -22,7 +22,7 @@ class cKetLahir extends CI_Controller
     public function cetak($id_ket_kelahiran)
     {
         $data_status = array(
-            'stat_lahir' => '1'
+            'stat_lahir' => '2'
         );
         $this->db->where('id_ket_kelahiran', $id_ket_kelahiran);
         $this->db->update('ket_kelahiran', $data_status);

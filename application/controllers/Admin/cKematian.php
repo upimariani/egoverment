@@ -22,7 +22,7 @@ class cKematian extends CI_Controller
     public function cetak($id_kematian)
     {
         $data_status = array(
-            'stat_kematian' => '1'
+            'stat_kematian' => '2'
         );
         $this->db->where('id_kematian', $id_kematian);
         $this->db->update('kematian', $data_status);

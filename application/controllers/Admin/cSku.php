@@ -22,7 +22,7 @@ class cSku extends CI_Controller
     public function cetak($id_sku)
     {
         $data_status = array(
-            'stat_usaha' => '1'
+            'stat_usaha' => '2'
         );
         $this->db->where('id_sku', $id_sku);
         $this->db->update('sku', $data_status);

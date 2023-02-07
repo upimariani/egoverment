@@ -60,43 +60,35 @@
                                     <?php
                                     $no = 1;
                                     foreach ($belum_kawin as $key => $value) {
+                                        if ($value->stat_surat == '0') {
+
                                     ?>
-                                        <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $value->no_kk ?></td>
-                                            <td><?= $value->nama_lengkap ?></td>
-                                            <td><?= $value->stat_kawin ?></td>
-                                            <td><?= $value->tgl_pengajuan_kawin ?></td>
-                                            <td><?php if ($value->stat_surat == '0') {
-                                                ?>
-                                                    <span class="badge badge-warning">Menunggu Konfirmasi</span>
-                                                <?php
-                                                } else if ($value->stat_surat == '1') {
-                                                ?>
-                                                    <span class="badge badge-info">Menunggu Dicetak</span>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <span class="badge badge-success">Selesai</span>
-                                                <?php
-                                                }
-                                                ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a href="<?php if ($value->stat_surat == '1') {
-                                                                ?>
-                                                        <?= base_url('Admin/cBMenikah/cetak/' . $value->id_kawin) ?>
-                                                        <?php
-                                                                } else {
-                                                        ?>  
-                                                                    #
-                                                                    <?php
-                                                                } ?>" class="btn btn-warning">Cetak Surat</a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $value->no_kk ?></td>
+                                                <td><?= $value->nama_lengkap ?></td>
+                                                <td><?= $value->stat_kawin ?></td>
+                                                <td><?= $value->tgl_pengajuan_kawin ?></td>
+                                                <td><?php if ($value->stat_surat == '0') {
+                                                    ?>
+                                                        <span class="badge badge-warning">Menunggu Konfirmasi</span>
+                                                    <?php
+                                                    } else if ($value->stat_surat == '1') {
+                                                    ?>
+                                                        <span class="badge badge-info">Selesai</span>
+                                                    <?php
+                                                    }
+                                                    ?>
+
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <a href="<?= base_url('KepalaDesa/cKonfirmasi/konfrm_kawin/' . $value->id_kawin) ?>" class="btn btn-warning">Konfirmasi</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                     <?php
+                                        }
                                     }
                                     ?>
                                 </tbody>

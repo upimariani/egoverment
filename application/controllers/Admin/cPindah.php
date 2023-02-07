@@ -22,7 +22,7 @@ class cPindah extends CI_Controller
     public function cetak($id_pindah)
     {
         $data_status = array(
-            'stat_pindah' => '1'
+            'stat_pindah' => '2'
         );
         $this->db->where('id_pindah', $id_pindah);
         $this->db->update('ket_pindah', $data_status);

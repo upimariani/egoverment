@@ -30,6 +30,8 @@ class cLogin extends CI_Controller
                     redirect('Admin/cSktm');
                 } else if ($cek->level_admin == '4') {
                     redirect('Admin/cKetLahir');
+                } else if ($cek->level_admin == '5') {
+                    redirect('KepalaDesa/ckonfirmasi');
                 }
             } else {
                 $this->session->set_flashdata('error', 'Username dan Password Anda Salah!!!');

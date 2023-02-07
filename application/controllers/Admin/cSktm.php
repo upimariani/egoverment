@@ -22,7 +22,7 @@ class cSktm extends CI_Controller
     public function cetak($id_sktm)
     {
         $data_status = array(
-            'stat_sktm' => '1'
+            'stat_sktm' => '2'
         );
         $this->db->where('id_sktm', $id_sktm);
         $this->db->update('sktm', $data_status);

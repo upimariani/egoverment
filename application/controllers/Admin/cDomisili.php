@@ -25,7 +25,7 @@ class cDomisili extends CI_Controller
     public function cetak($id_domisili)
     {
         $data_status = array(
-            'stat_dom' => '1'
+            'stat_dom' => '2'
         );
         $this->db->where('id_domisili', $id_domisili);
         $this->db->update('domisili', $data_status);

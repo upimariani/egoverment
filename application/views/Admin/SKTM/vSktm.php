@@ -67,11 +67,15 @@
                                             <td><?= $value->tgl_pengajuan_sktm ?></td>
                                             <td><?php if ($value->stat_sktm == '0') {
                                                 ?>
-                                                    <span class="badge badge-warning">Menunggu Dicetak</span>
+                                                    <span class="badge badge-warning">Menunggu Konfirmasi</span>
                                                 <?php
                                                 } else if ($value->stat_sktm == '1') {
                                                 ?>
-                                                    <span class="badge badge-info">Selesai</span>
+                                                    <span class="badge badge-info">Menunggu Dicetak</span>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <span class="badge badge-success">Selesai</span>
                                                 <?php
                                                 }
                                                 ?>

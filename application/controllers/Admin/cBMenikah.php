@@ -22,7 +22,7 @@ class cBMenikah extends CI_Controller
     public function cetak($id_kawin)
     {
         $data_status = array(
-            'stat_surat' => '1'
+            'stat_surat' => '2'
         );
         $this->db->where('id_kawin', $id_kawin);
         $this->db->update('belum_kawin', $data_status);

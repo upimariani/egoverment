@@ -60,35 +60,35 @@
                                     <?php
                                     $no = 1;
                                     foreach ($domisili as $key => $value) {
-                                    ?>
-                                        <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $value->no_kk ?></td>
-                                            <td><?= $value->nama_lengkap ?></td>
-                                            <td><?= $value->tgl_pengajuan_dom ?></td>
-                                            <td><?php if ($value->stat_dom == '0') {
-                                                ?>
-                                                    <span class="badge badge-warning">Menunggu Konfirmasi</span>
-                                                <?php
-                                                } else if ($value->stat_dom == '1') {
-                                                ?>
-                                                    <span class="badge badge-info">Menunggu Dicetak</span>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <span class="badge badge-success">Selesai</span>
-                                                <?php
-                                                }
-                                                ?>
+                                        if ($value->stat_dom == '0') {
+                                            # code...
 
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a href="<?= base_url('Admin/cDomisili/cetak/' . $value->id_domisili) ?>" class="btn btn-warning">Cetak Surat</a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                    ?>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $value->no_kk ?></td>
+                                                <td><?= $value->nama_lengkap ?></td>
+                                                <td><?= $value->tgl_pengajuan_dom ?></td>
+                                                <td><?php if ($value->stat_dom == '0') {
+                                                    ?>
+                                                        <span class="badge badge-warning">Menunggu Konfirmasi</span>
+                                                    <?php
+                                                    } else if ($value->stat_dom == '1') {
+                                                    ?>
+                                                        <span class="badge badge-info">Selesai</span>
+                                                    <?php
+                                                    }
+                                                    ?>
+
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <a href="<?= base_url('KepalaDesa/cKonfirmasi/konfrm_domisili/' . $value->id_domisili) ?>" class="btn btn-warning">Konfirmasi</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                     <?php
+                                        }
                                     }
                                     ?>
                                 </tbody>

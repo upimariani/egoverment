@@ -5,14 +5,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Surat Pengajuan Surat Belum Menikah</h1>
+                    <h1>Surat Pengajuan Surat Keterangan Tidak Mampu</h1>
 
                 </div>
 
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Surat Belum Menikah</li>
+                        <li class="breadcrumb-item active">Surat Keterangan Tidak Mampu</li>
                     </ol>
                 </div>
 
@@ -40,7 +40,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Informasi Pengajuan Surat Status Menikah</h3>
+                            <h3 class="card-title">Informasi Pengajuan Surat Keterangan Tidak Mampu</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -50,7 +50,6 @@
                                         <th>No</th>
                                         <th>No Kartu Keluarga</th>
                                         <th>Atas Nama Pemohon</th>
-                                        <th>Status Menikah</th>
                                         <th>Tanggal Pengajuan</th>
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
@@ -59,44 +58,34 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($belum_kawin as $key => $value) {
+                                    foreach ($sktm as $key => $value) {
+                                        if ($value->stat_sktm == '0') {
                                     ?>
-                                        <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $value->no_kk ?></td>
-                                            <td><?= $value->nama_lengkap ?></td>
-                                            <td><?= $value->stat_kawin ?></td>
-                                            <td><?= $value->tgl_pengajuan_kawin ?></td>
-                                            <td><?php if ($value->stat_surat == '0') {
-                                                ?>
-                                                    <span class="badge badge-warning">Menunggu Konfirmasi</span>
-                                                <?php
-                                                } else if ($value->stat_surat == '1') {
-                                                ?>
-                                                    <span class="badge badge-info">Menunggu Dicetak</span>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <span class="badge badge-success">Selesai</span>
-                                                <?php
-                                                }
-                                                ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a href="<?php if ($value->stat_surat == '1') {
-                                                                ?>
-                                                        <?= base_url('Admin/cBMenikah/cetak/' . $value->id_kawin) ?>
-                                                        <?php
-                                                                } else {
-                                                        ?>  
-                                                                    #
-                                                                    <?php
-                                                                } ?>" class="btn btn-warning">Cetak Surat</a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $value->no_kk ?></td>
+                                                <td><?= $value->nama_lengkap ?></td>
+                                                <td><?= $value->tgl_pengajuan_sktm ?></td>
+                                                <td><?php if ($value->stat_sktm == '0') {
+                                                    ?>
+                                                        <span class="badge badge-warning">Menunggu Konfirmasi</span>
+                                                    <?php
+                                                    } else if ($value->stat_sktm == '1') {
+                                                    ?>
+                                                        <span class="badge badge-info">Selesai</span>
+                                                    <?php
+                                                    }
+                                                    ?>
+
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <a href="<?= base_url('KepalaDesa/cKonfirmasi/konfrm_sktm/' . $value->id_sktm) ?>" class="btn btn-warning">Konfirmasi</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                     <?php
+                                        }
                                     }
                                     ?>
                                 </tbody>
@@ -105,7 +94,6 @@
                                         <th>No</th>
                                         <th>No Kartu Keluarga</th>
                                         <th>Atas Nama Pemohon</th>
-                                        <th>Status Menikah</th>
                                         <th>Tanggal Pengajuan</th>
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>

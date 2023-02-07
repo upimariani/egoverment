@@ -78,6 +78,8 @@
                                                     echo 'Kasi Kesejahteraan';
                                                 } else if ($value->level_admin == '4') {
                                                     echo 'Kasi Pelayanan';
+                                                } else if ($value->level_admin == '5') {
+                                                    echo 'Kepala Desa';
                                                 } ?></td>
                                             <td class="text-center">
                                                 <div class="btn-group">
@@ -154,6 +156,7 @@
                             <option value="2">Kasi Pemerintahan</option>
                             <option value="3">Kasi Kesejahteraan</option>
                             <option value="4">Kasi Pelayanan</option>
+                            <option value="5">Kepala Desa</option>
                         </select>
                     </div>
                 </div>
@@ -219,6 +222,9 @@ foreach ($admin as $key => $value) {
                                 <option value="4" <?php if ($value->level_admin == '4') {
                                                         echo 'selected';
                                                     } ?>>Kasi Pelayanan</option>
+                                <option value="5" <?php if ($value->level_admin == '5') {
+                                                        echo 'selected';
+                                                    } ?>>Kepala Desa</option>
                             </select>
                         </div>
                     </div>

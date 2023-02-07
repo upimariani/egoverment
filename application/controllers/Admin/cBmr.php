@@ -22,7 +22,7 @@ class cBmr extends CI_Controller
     public function cetak($id_rumah)
     {
         $data_status = array(
-            'stat_rumah' => '1'
+            'stat_rumah' => '2'
         );
         $this->db->where('id_rumah', $id_rumah);
         $this->db->update('blm_mmlk_rumah', $data_status);
