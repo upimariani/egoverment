@@ -27,25 +27,32 @@
                 }
                 ?>
                 <p class="mb-4">Silahkan mengisi data pengajuan surat keterangan status kawin</p>
-                <form action="<?= base_url('Masyarakat/cMenikah/daftar/' . $domisili->id_masyarakat) ?>" method="POST">
-                    <h3>STATUS KAWIN</h3>
-                    <hr>
-                    <div class="row g-3">
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <select name="status" id="name" class="form-control" required>
-                                    <option value="Belum Kawin">1. Belum Kawin</option>
-                                    <option value="Sudah Menikah">2. Sudah Menikah</option>
-                                    <option value="Cerai Mati">3. Cerai Mati</option>
-                                    <option value="Cerai Hidup">4. Cerai Hidup</option>
-                                </select>
-                                <label for="name">Status Kawin</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                <?php echo form_open_multipart('Masyarakat/cMenikah/daftar/' . $domisili->id_masyarakat); ?>
+
+                <h3>STATUS KAWIN</h3>
+                <hr>
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <select name="status" id="name" class="form-control" required>
+                                <option value="Belum Kawin">1. Belum Kawin</option>
+                                <option value="Sudah Menikah">2. Sudah Menikah</option>
+                                <option value="Cerai Mati">3. Cerai Mati</option>
+                                <option value="Cerai Hidup">4. Cerai Hidup</option>
+                            </select>
+                            <label for="name">Status Kawin</label>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="file" name="surat_pengantar" class="form-control" id="name" placeholder="Masukkan NIK anda" required>
+                            <label for="name">Surat Pengantar</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                    </div>
+                </div>
                 </form>
             </div>
 

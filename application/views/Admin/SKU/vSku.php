@@ -53,6 +53,8 @@
                                         <th>Nama Usaha</th>
                                         <th>Jenis Usaha</th>
                                         <th>Tanggal Pengajuan</th>
+                                        <th>Surat Pengantar</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -69,6 +71,8 @@
                                             <td><?= $value->nama_usaha ?></td>
                                             <td><?= $value->jenis_usaha ?></td>
                                             <td><?= $value->tgl_pengajuan_sku ?></td>
+                                            <td><a href="<?= base_url('asset/pengantar/' . $value->surat_pengantar) ?>"><?= $value->surat_pengantar ?></a></td>
+
                                             <td><?php if ($value->stat_usaha == '0') {
                                                 ?>
                                                     <span class="badge badge-warning">Menunggu Konfirmasi</span>
@@ -103,6 +107,8 @@
                                         <th>Nama Usaha</th>
                                         <th>Jenis Usaha</th>
                                         <th>Tanggal Pengajuan</th>
+                                        <th>Surat Pengantar</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>

@@ -22,19 +22,36 @@ class cSktm extends CI_Controller
     }
     public function daftar($id_masyarakat)
     {
-        $no_surat = $this->db->query("SELECT MAX(no_surat_sktm)+1 as no_surat FROM `sktm`;")->row();
-        if ($no_surat->no_surat == NULL) {
-            $no_urut = '1';
+        $config['upload_path']          = './asset/pengantar';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 500000;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('surat_pengantar')) {
+            $data = array(
+                'domisili' => $this->mPengajuanSurat->data_masyarakat()
+            );
+            $this->load->view('Masyarakat/Layout/head');
+            $this->load->view('Masyarakat/vKetTidakMampu', $data);
+            $this->load->view('Masyarakat/Layout/footer');
         } else {
-            $no_urut = $no_surat->no_surat;
+            $upload_data = $this->upload->data();
+            $no_surat = $this->db->query("SELECT MAX(no_surat_sktm)+1 as no_surat FROM `sktm`;")->row();
+            if ($no_surat->no_surat == NULL) {
+                $no_urut = '1';
+            } else {
+                $no_urut = $no_surat->no_surat;
+            }
+            $data_sktm = array(
+                'id_masyarakat' => $id_masyarakat,
+                'tgl_pengajuan_sktm' => date('Y-m-d'),
+                'no_surat_sktm' => $no_urut,
+                'surat_pengantar' => $upload_data['file_name']
+            );
+            $this->mPengajuanSurat->insertSktm($data_sktm);
+            redirect('Masyarakat/cSktm/status');
         }
-        $data_sktm = array(
-            'id_masyarakat' => $id_masyarakat,
-            'tgl_pengajuan_sktm' => date('Y-m-d'),
-            'no_surat_sktm' => $no_urut
-        );
-        $this->mPengajuanSurat->insertSktm($data_sktm);
-        redirect('Masyarakat/cSktm/status');
     }
     public function status()
     {

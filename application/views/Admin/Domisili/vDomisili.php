@@ -52,6 +52,8 @@
                                         <th>No Kartu Keluarga</th>
                                         <th>Atas Nama Pemohon</th>
                                         <th>Tanggal Pengajuan</th>
+                                        <th>Surat Pengantar</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -66,6 +68,8 @@
                                             <td><?= $value->no_kk ?></td>
                                             <td><?= $value->nama_lengkap ?></td>
                                             <td><?= $value->tgl_pengajuan_dom ?></td>
+                                            <td><a href="<?= base_url('asset/pengantar/' . $value->surat_pengantar) ?>"><?= $value->surat_pengantar ?></a></td>
+
                                             <td><?php if ($value->stat_dom == '0') {
                                                 ?>
                                                     <span class="badge badge-warning">Menunggu Konfirmasi</span>
@@ -98,6 +102,8 @@
                                         <th>No Kartu Keluarga</th>
                                         <th>Atas Nama Pemohon</th>
                                         <th>Tanggal Pengajuan</th>
+                                        <th>Surat Pengajuan</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>

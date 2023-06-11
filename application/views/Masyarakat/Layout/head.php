@@ -81,16 +81,26 @@
 
                 ?>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pengajuan Surat</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kasi Kesejahteraan</a>
                         <div class="dropdown-menu bg-light m-0">
-                            <a href="<?= base_url('masyarakat/cDomisili') ?>" class="dropdown-item">Domisili</a>
-                            <a href="<?= base_url('masyarakat/cKetlahir') ?>" class="dropdown-item">Keterangan Kelahiran</a>
-                            <a href="<?= base_url('masyarakat/cPindah') ?>" class="dropdown-item">Pindah</a>
                             <a href="<?= base_url('masyarakat/cSktm') ?>" class="dropdown-item">SKTM</a>
                             <a href="<?= base_url('masyarakat/cSku') ?>" class="dropdown-item">SKU</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kasi Pelayanan</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="<?= base_url('masyarakat/cKetlahir') ?>" class="dropdown-item">Keterangan Kelahiran</a>
                             <a href="<?= base_url('masyarakat/cKematian') ?>" class="dropdown-item">Kematian</a>
-                            <a href="<?= base_url('masyarakat/cBmr') ?>" class="dropdown-item">Belum Memiliki Rumah</a>
                             <a href="<?= base_url('masyarakat/cMenikah') ?>" class="dropdown-item">Belum Menikah</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kasi Pemerintahan</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="<?= base_url('masyarakat/cDomisili') ?>" class="dropdown-item">Domisili</a>
+                            <a href="<?= base_url('masyarakat/cPindah') ?>" class="dropdown-item">Pindah</a>
+                            <a href="<?= base_url('masyarakat/cBmr') ?>" class="dropdown-item">Belum Memiliki Rumah</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">

@@ -27,26 +27,32 @@
                 }
                 ?>
                 <p class="mb-4">Silahkan mengisi data pengajuan surat keterangan usaha</p>
-                <form action="<?= base_url('Masyarakat/cSku/daftar/' . $domisili->id_masyarakat) ?>" method="POST">
-                    <h3>DATA USAHA</h3>
-                    <hr>
-                    <div class="row g-3">
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="text" name="nama" class="form-control" required>
-                                <label for="name">Nama Usaha</label>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="text" name="jenis" class="form-control" required>
-                                <label for="name">Jenis Usaha</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                <?php echo form_open_multipart('Masyarakat/cSku/daftar/' . $domisili->id_masyarakat); ?>
+                <h3>DATA USAHA</h3>
+                <hr>
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="text" name="nama" class="form-control" required>
+                            <label for="name">Nama Usaha</label>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="text" name="jenis" class="form-control" required>
+                            <label for="name">Jenis Usaha</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="file" name="surat_pengantar" class="form-control" id="name" placeholder="Masukkan NIK anda" required>
+                            <label for="name">Surat Pengantar</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                    </div>
+                </div>
                 </form>
             </div>
 

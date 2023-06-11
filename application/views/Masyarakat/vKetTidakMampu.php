@@ -27,36 +27,43 @@
                 }
                 ?>
                 <p class="mb-4">Silahkan mengisi data pengajuan surat keterangan tidak mampu</p>
-                <form action="<?= base_url('Masyarakat/cSktm/daftar/' . $domisili->id_masyarakat) ?>" method="POST">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" name="nik" value="<?= $domisili->nama_lengkap ?>" class="form-control" id="name" placeholder="Masukkan NIK anda" readonly>
-                                <label for="name">Nama Lengkap</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" name="nik" class="form-control" value="<?= $domisili->jk ?>" id="name" placeholder="Masukkan NIK anda" readonly>
-                                <label for="name">Jenis Kelamin</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" name="nik" class="form-control" value="<?= $domisili->nik ?>" id="name" placeholder="Masukkan NIK anda" readonly>
-                                <label for="name">Tempat, Tanggal Lahir</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" name="nik" class="form-control" value="<?= $domisili->agama ?>" id="name" placeholder="Masukkan NIK anda" readonly>
-                                <label for="name">Agama</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                <?php echo form_open_multipart('Masyarakat/cSktm/daftar/' . $domisili->id_masyarakat); ?>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" name="nik" value="<?= $domisili->nama_lengkap ?>" class="form-control" id="name" placeholder="Masukkan NIK anda" readonly>
+                            <label for="name">Nama Lengkap</label>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" name="nik" class="form-control" value="<?= $domisili->jk ?>" id="name" placeholder="Masukkan NIK anda" readonly>
+                            <label for="name">Jenis Kelamin</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" name="nik" class="form-control" value="<?= $domisili->nik ?>" id="name" placeholder="Masukkan NIK anda" readonly>
+                            <label for="name">Tempat, Tanggal Lahir</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" name="nik" class="form-control" value="<?= $domisili->agama ?>" id="name" placeholder="Masukkan NIK anda" readonly>
+                            <label for="name">Agama</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="file" name="surat_pengantar" class="form-control" id="name" placeholder="Masukkan NIK anda" required>
+                            <label for="name">Surat Pengantar</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                    </div>
+                </div>
                 </form>
             </div>
 

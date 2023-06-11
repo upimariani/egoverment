@@ -54,9 +54,13 @@
                                 <td><?= $value->tgl_pengajuan_kematian ?></td>
                                 <td><?php if ($value->stat_kematian == '0') {
                                     ?>
-                                        <span>Menunggu Dicetak</span>
+                                        <span>Menunggu Dikonfirmasi</span>
                                     <?php
                                     } else if ($value->stat_kematian == '1') {
+                                    ?>
+                                        <span>Menunggu Dicetak</span>
+                                    <?php
+                                    } else {
                                     ?>
                                         <span>Selesai</span>
                                     <?php
@@ -65,7 +69,13 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="<?= base_url('Admin/cKematian/cetak/' . $value->id_kematian) ?>" class="btn btn-warning">Cetak Surat</a>
+                                        <?php
+                                        if ($value->stat_kematian == '1') {
+                                        ?>
+                                            <a href="<?= base_url('Admin/cDomisili/cetak/' . $value->id_domisili) ?>" class="btn btn-warning">Cetak Surat</a>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                 </td>
                             </tr>

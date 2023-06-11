@@ -22,22 +22,39 @@ class cKematian extends CI_Controller
     }
     public function daftar($id_masyarakat)
     {
-        $no_surat = $this->db->query("SELECT MAX(no_surat_kematian)+1 as no_surat FROM `kematian`;")->row();
-        if ($no_surat->no_surat == NULL) {
-            $no_urut = '1';
+        $config['upload_path']          = './asset/pengantar';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 500000;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('surat_pengantar')) {
+            $data = array(
+                'kematian' => $this->mPengajuanSurat->data_masyarakat()
+            );
+            $this->load->view('Masyarakat/Layout/head');
+            $this->load->view('Masyarakat/vKematian', $data);
+            $this->load->view('Masyarakat/Layout/footer');
         } else {
-            $no_urut = $no_surat->no_surat;
+            $upload_data = $this->upload->data();
+            $no_surat = $this->db->query("SELECT MAX(no_surat_kematian)+1 as no_surat FROM `kematian`;")->row();
+            if ($no_surat->no_surat == NULL) {
+                $no_urut = '1';
+            } else {
+                $no_urut = $no_surat->no_surat;
+            }
+            $data_kematian = array(
+                'id_masyarakat' => $id_masyarakat,
+                'tgl_pengajuan_kematian' => date('Y-m-d'),
+                'no_surat_kematian' => $no_urut,
+                'tgl_meninggal' => $this->input->post('tanggal'),
+                'akibat' => $this->input->post('akibat'),
+                'tempat' => $this->input->post('tempat'),
+                'surat_pengantar' => $upload_data['file_name']
+            );
+            $this->mPengajuanSurat->insertKematian($data_kematian);
+            redirect('Masyarakat/cKematian/status');
         }
-        $data_kematian = array(
-            'id_masyarakat' => $id_masyarakat,
-            'tgl_pengajuan_kematian' => date('Y-m-d'),
-            'no_surat_kematian' => $no_urut,
-            'tgl_meninggal' => $this->input->post('tanggal'),
-            'akibat' => $this->input->post('akibat'),
-            'tempat' => $this->input->post('tempat'),
-        );
-        $this->mPengajuanSurat->insertKematian($data_kematian);
-        redirect('Masyarakat/cKematian/status');
     }
     public function status()
     {

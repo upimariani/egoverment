@@ -27,31 +27,38 @@
                 }
                 ?>
                 <p class="mb-4">Silahkan mengisi data pengajuan surat keterangan kematian</p>
-                <form action="<?= base_url('Masyarakat/ckematian/daftar/' . $kematian->id_masyarakat) ?>" method="POST">
-                    <p>Menerangkan bahawa yang memiliki NIK <strong><?= $kematian->nik ?></strong> telah meninggal pada:</p>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" name="tanggal" class="form-control" id="name" placeholder="Masukkan NIK anda">
-                                <label for="name">Tanggal</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" name="tempat" class="form-control" id="name" placeholder="Masukkan NIK anda">
-                                <label for="name">Tempat meninggal di</label>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="text" name="akibat" class="form-control" id="name" placeholder="Masukkan NIK anda">
-                                <label for="name">Sebab akibat meninggal</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                <?php echo form_open_multipart('Masyarakat/ckematian/daftar/' . $domisili->id_masyarakat); ?>
+
+                <p>Menerangkan bahawa yang memiliki NIK <strong><?= $kematian->nik ?></strong> telah meninggal pada:</p>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" name="tanggal" class="form-control" id="name" placeholder="Masukkan NIK anda">
+                            <label for="name">Tanggal</label>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" name="tempat" class="form-control" id="name" placeholder="Masukkan NIK anda">
+                            <label for="name">Tempat meninggal di</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="text" name="akibat" class="form-control" id="name" placeholder="Masukkan NIK anda">
+                            <label for="name">Sebab akibat meninggal</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="file" name="surat_pengantar" class="form-control" id="name" placeholder="Masukkan NIK anda" required>
+                            <label for="name">Surat Pengantar</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary py-3 px-4" type="submit">Daftar</button>
+                    </div>
+                </div>
                 </form>
             </div>
         </div>

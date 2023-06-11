@@ -53,6 +53,8 @@
                                         <th>Tanggal Pengajuan</th>
                                         <th>Alamat Tujuan</th>
                                         <th>Antar</th>
+                                        <th>Surat Pengantar</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -81,6 +83,8 @@
                                                     echo 'Provinsi';
                                                 }
                                                 ?></td>
+                                            <td><a href="<?= base_url('asset/pengantar/' . $value->surat_pengantar) ?>"><?= $value->surat_pengantar ?></a></td>
+
                                             <td><?php if ($value->stat_pindah == '0') {
                                                 ?>
                                                     <span class="badge badge-warning">Menunggu Konfirmasi</span>
@@ -115,6 +119,8 @@
                                         <th>Tanggal Pengajuan</th>
                                         <th>Alamat Tujuan</th>
                                         <th>Antar</th>
+                                        <th>Surat Pengantar</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>

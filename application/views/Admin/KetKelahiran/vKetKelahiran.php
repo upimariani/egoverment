@@ -55,6 +55,8 @@
                                         <th>Kelahiran</th>
                                         <th>Tgl. Perkawinan</th>
                                         <th>Saksi</th>
+                                        <th>Surat Pengantar</th>
+
                                         <th>Status Pengajuan</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -101,6 +103,8 @@
                                                 <?= $value->nama_saksi_satu ?><br>
                                                 Saksi 2 : <?= $value->nik_saksi_dua ?><br>
                                                 <?= $value->nama_saksi_dua ?></td>
+                                            <td><a href="<?= base_url('asset/pengantar/' . $value->surat_pengantar) ?>"><?= $value->surat_pengantar ?></a></td>
+
                                             <td><?php if ($value->stat_lahir == '0') {
                                                 ?>
                                                     <span class="badge badge-warning">Menunggu Konfirmasi</span>
